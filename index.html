@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mais Futuro Racing | UNO LEGENDS – GRAN PRIX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&family=Rubik:wght@400;700;900&display=swap');
+
+      body {
+        font-family: 'Rubik', sans-serif;
+        overflow-x: hidden;
+      }
+
+      .racing-font {
+        font-family: 'Racing Sans One', cursive;
+      }
+
+      .hero-bg {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url('https://images.unsplash.com/photo-1514316454345-750a7fd3da3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .car-image {
+        transform: perspective(800px) rotateY(-10deg);
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+        transition: all 0.3s ease;
+      }
+
+      .car-image:hover {
+        transform: perspective(800px) rotateY(0deg);
+        filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
+      }
+
+      .puzzle-piece {
+        clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      }
+
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .animate-speed {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .animate-speed::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transform: translateX(-100%);
+        animation: speed 1.5s infinite;
+      }
+
+      @keyframes speed {
+        100% {
+          transform: translateX(100%);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white">
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+      <div class="container mx-auto px-6 z-10 text-center">
+        <h1 class="racing-font text-5xl md:text-7xl lg:text-8xl font-bold mb-6 text-yellow-400 animate-float">
+          A CORRIDA MAIS INSANA <br />DA INTERNET VAI COMEÇAR
+        </h1>
+        <p class="text-xl md:text-2xl mb-10 text-white max-w-3xl mx-auto">
+          Influenciadores, criatividade e velocidade se enfrentam numa batalha épica de Unos turbinados.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button
+            onclick="scrollToSection('team')"
+            class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 animate-speed"
+          >
+            CONHEÇA A EQUIPE
+          </button>
+        </div>
+      </div>
+
+      <!-- Speed lines -->
+      <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black to-transparent z-20"></div>
+    </section>
+
+    <!-- About the Race -->
+    <section id="race" class="py-20 bg-gradient-to-b from-black to-blue-900">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <div class="lg:w-1/2">
+            <h2 class="racing-font text-4xl md:text-5xl font-bold mb-8 text-yellow-400">UNO LEGENDS – GRAN PRIX</h2>
+            <p class="text-lg md:text-xl mb-6">
+              O campeonato que reúne os melhores criadores de conteúdo, influenciadores e apaixonados por velocidade em
+              uma competição única.
+            </p>
+            <p class="text-lg md:text-xl mb-6">
+              Carros modificados, desafios criativos e muita adrenalina em cada curva. O UNO LEGENDS não é apenas uma
+              corrida, é um espetáculo digital.
+            </p>
+            <div class="bg-orange-500 p-6 rounded-lg border-l-4 border-yellow-400">
+              <p class="font-bold text-xl">
+                "Influenciadores, criatividade e velocidade se enfrentam numa batalha épica de Unos turbinados."
+              </p>
+            </div>
+          </div>
+          <div class="lg:w-1/2">
+            <img src="\img\unocomplete.jpg" alt="Fiat Uno Racing" class="w-full h-auto rounded-lg car-image" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Team -->
+    <section id="team" class="py-20 bg-gradient-to-b from-blue-900 to-black text-white">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-yellow-400 racing-font">
+      Rebimboca da Parafuseta
+    </h2>
+
+    <div class="flex flex-col lg:flex-row items-center lg:items-start gap-12 mb-16">
+      <!-- Texto -->
+      <div class="lg:w-1/2 order-2 lg:order-1">
+        <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-red-500">
+          Unindo criatividade, inclusão e performance
+        </h3>
+        <p class="text-base md:text-lg mb-4 leading-relaxed text-gray-100">
+          A Rebimboca da Parafuseta nasceu da paixão por velocidade e inovação. Nossa equipe é formada por talentos
+          que acreditam no poder transformador do esporte.
+        </p>
+        <p class="text-base md:text-lg mb-4 leading-relaxed text-gray-100">
+          Nosso Fiat Uno foi meticulosamente preparado para extrair o máximo desempenho, mantendo a essência do
+          carro que conquistou o Brasil.
+        </p>
+        <p class="text-lg md:text-xl font-bold text-yellow-400 italic">
+          "Levar o Fiat Uno ao limite é nossa missão!"
+        </p>
+      </div>
+
+      <!-- Imagem -->
+      <div class="lg:w-1/2 order-1 lg:order-2">
+        <img
+          src="/img/unologo-newcolor.png"
+          alt="Mais Futuro Racing Team"
+          class="w-full max-w-md mx-auto lg:mx-0 h-auto rounded-xl shadow-lg transition-transform duration-300 hover:scale-105"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+   <!-- Sponsors -->
+<div class="mt-1">
+  <h3 class="text-2xl font-bold mb-8 text-center">NOSSOS PATROCINADORES</h3>
+  <div class="flex flex-wrap justify-center items-center gap-8">
+    <img
+      src="/img/sponsors/octane.png"
+      alt="Octane"
+      class="w-40 h-auto object-contain"
+    />
+    <img
+      src="/img/sponsors/jrspeed.png"
+      alt="JR Speed"
+      class="w-40 h-auto object-contain"
+    />
+    <img
+      src="/img/sponsors/maisfuturo.png"
+      alt="Mais Futuro"
+      class="w-40 h-auto object-contain"
+    />
+    <img
+      src="/img/sponsors/metemarcha.png"
+      alt="Mete Marcha"
+      class="w-40 h-auto object-contain"
+    />
+    <img
+      src="/img/sponsors/m2.png"
+      alt="M2"
+      class="w-40 h-auto object-contain"
+    />
+  </div>
+</div>
+
+    </section>
+
+    <!-- Social Media -->
+    <section class="py-20 bg-black">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="racing-font text-4xl md:text-5xl font-bold mb-8 text-yellow-400">SIGA A CORRIDA</h2>
+        <p class="text-xl mb-12 max-w-2xl mx-auto">
+          Acompanhe todos os bastidores, treinos e a competição através das nossas redes sociais.
+        </p>
+
+        <div class="flex justify-center gap-6 mb-16">
+          <a
+            href="https://www.instagram.com/equiperebimbocadaparafuseta/"
+            target="_blank"
+            class="bg-gradient-to-br from-purple-600 to-pink-600 w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl hover:scale-110 transition-transform"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="#"
+            class="bg-black w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl hover:scale-110 transition-transform"
+          >
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a
+            href="#"
+            class="bg-red-600 w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl hover:scale-110 transition-transform"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a
+            href="#"
+            class="bg-blue-500 w-16 h-16 rounded-full flex items-center justify-center text-white text-2xl hover:scale-110 transition-transform"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+
+        <button
+          class="bg-gradient-to-r from-orange-500 to-yellow-400 hover:from-orange-600 hover:to-yellow-500 text-black font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 animate-speed"
+        >
+          SIGA A CORRIDA
+        </button>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20 bg-gradient-to-b from-black to-red-900 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div
+          class="absolute inset-0 bg-repeat"
+          style="
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIxMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=');
+          "
+        ></div>
+      </div>
+      <div class="container mx-auto px-6 text-center relative z-10">
+        <h2 class="racing-font text-4xl md:text-6xl font-bold mb-8 text-white">
+          ESTÁ PRONTO PARA ACELERAR COM A GENTE?
+        </h2>
+        <p class="text-xl mb-12 max-w-2xl mx-auto">
+          Junte-se a essa jornada épica e seja parte da lenda do UNO LEGENDS!
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+  <a
+    href="https://www.instagram.com/equiperebimbocadaparafuseta/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <button
+      class="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105"
+    >
+      ACOMPANHE
+    </button>
+  </a>
+</div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gray-800">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <h3 class="racing-font text-2xl text-yellow-400">Rebimboca da Parafuseta</h3>
+            <p class="text-gray-400">UNO LEGENDS – GRAN PRIX</p>
+          </div>
+
+          <div class="flex flex-col items-center md:items-end">
+            <p class="text-gray-400 mb-4">© 2025 Rebimboca da Parafuseta. Todos os direitos reservados.</p>
+            <div class="flex gap-4">
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">Termos</a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacidade</a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">Contato</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+
+      // Add animation on scroll
+      document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('animate-fadeIn');
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+
+        document.querySelectorAll('section').forEach((section) => {
+          observer.observe(section);
+        });
+      });
+    </script>
+  </body>
+</html>
